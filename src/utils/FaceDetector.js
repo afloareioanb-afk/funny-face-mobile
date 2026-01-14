@@ -1,7 +1,5 @@
-import * as tf from '@tensorflow/tfjs';
-import '@tensorflow/tfjs-react-native';
-import '@tensorflow/tfjs-platform-react-native';
-import { bundleResourceIO } from '@tensorflow/tfjs-react-native';
+// TensorFlow.js imports removed - using mock data for now
+// To enable real face detection, add TensorFlow.js packages back
 
 /**
  * Face Detector using TensorFlow.js
@@ -15,19 +13,14 @@ export default class FaceDetector {
 
   async initialize() {
     try {
-      // Initialize TensorFlow.js
-      await tf.ready();
-      
-      // For production, you would load a pre-trained face detection model
-      // Example: BlazeFace or MediaPipe Face Detection
-      // This is a placeholder - you'll need to add the actual model files
-      
-      // Load model (example structure)
-      // const modelUrl = bundleResourceIO('model/model.json');
-      // this.model = await tf.loadLayersModel(modelUrl);
+      // Using mock data for now - TensorFlow.js removed for build compatibility
+      // To enable real face detection:
+      // 1. Add @tensorflow/tfjs packages back to package.json
+      // 2. Load face detection model
+      // 3. Implement real detection logic
       
       this.initialized = true;
-      console.log('Face detector initialized');
+      console.log('Face detector initialized (mock mode)');
     } catch (error) {
       console.error('Error initializing face detector:', error);
       throw error;
@@ -40,35 +33,9 @@ export default class FaceDetector {
    * @returns {Array} Array of detected faces with bounding boxes and landmarks
    */
   async detectFaces(image) {
-    if (!this.initialized || !this.model) {
-      // Fallback: return mock data for development
-      return this.getMockFaceData();
-    }
-
-    try {
-      // Preprocess image
-      const tensor = tf.browser.fromPixels(image);
-      const resized = tf.image.resizeBilinear(tensor, [224, 224]);
-      const normalized = resized.div(255.0);
-      const batched = normalized.expandDims(0);
-
-      // Run inference
-      const predictions = await this.model.predict(batched).data();
-
-      // Process predictions to extract face data
-      const faces = this.processPredictions(predictions);
-
-      // Cleanup tensors
-      tensor.dispose();
-      resized.dispose();
-      normalized.dispose();
-      batched.dispose();
-
-      return faces;
-    } catch (error) {
-      console.error('Error detecting faces:', error);
-      return this.getMockFaceData();
-    }
+    // Using mock data for build compatibility
+    // Real implementation would use TensorFlow.js here
+    return this.getMockFaceData();
   }
 
   /**
@@ -114,9 +81,7 @@ export default class FaceDetector {
   }
 
   cleanup() {
-    if (this.model) {
-      this.model.dispose();
-    }
+    // Cleanup resources if needed
     this.initialized = false;
   }
 }
