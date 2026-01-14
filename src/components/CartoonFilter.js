@@ -1,21 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
-// import { GLView } from 'expo-gl'; // Removed - using simpler approach
+import { View, StyleSheet } from 'react-native';
 import FaceDetector from '../utils/FaceDetector';
-
-const { width, height } = Dimensions.get('window');
 
 /**
  * Cartoon Filter Component
  * Applies real-time cartoon effect overlay on camera feed
- * Uses WebGL for efficient image processing
+ * Simplified version without WebGL for compatibility
  */
 export default function CartoonFilter({
   cameraType,
   isProcessing,
   onProcessingChange,
 }) {
-  const glRef = useRef(null);
   const faceDetectorRef = useRef(null);
   const [filterReady, setFilterReady] = useState(false);
 
@@ -48,34 +44,11 @@ export default function CartoonFilter({
     };
   }, []);
 
-  const onGLContextCreate = async (gl) => {
-    // WebGL context for applying cartoon filter
-    // This will process camera frames in real-time
-    // For now, this is a placeholder - full implementation would use
-    // frame processors with react-native-vision-camera or similar
-    
-    glRef.current = gl;
-    
-    // Set up WebGL viewport
-    gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
-    
-    // In production, you would:
-    // 1. Create shaders for cartoon effect
-    // 2. Set up texture for camera frames
-    // 3. Process frames with face detection
-    // 4. Apply cartoon filter shaders
-  };
-
-  // Return overlay view - the actual filter processing happens
+  // Return overlay view - filter processing will be handled
   // through camera frame processors in CartoonCameraView
   return (
     <View style={styles.overlay} pointerEvents="none">
-      {filterReady && (
-        <GLView
-          style={styles.glView}
-          onContextCreate={onGLContextCreate}
-        />
-      )}
+      {/* Cartoon filter overlay - simplified for build compatibility */}
     </View>
   );
 }
@@ -88,8 +61,5 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     backgroundColor: 'transparent',
-  },
-  glView: {
-    flex: 1,
   },
 });
