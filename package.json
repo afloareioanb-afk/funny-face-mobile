@@ -20,17 +20,11 @@
     "expo-file-system": "~16.0.0",
     "expo-media-library": "~15.0.0",
     "expo-gl": "~13.0.0",
-    "expo-gl-cpp": "~13.0.0",
     "react": "18.2.0",
     "react-native": "0.73.0",
     "react-native-svg": "13.4.0",
     "react-native-reanimated": "~3.6.0",
     "react-native-gesture-handler": "~2.14.0",
-    "@tensorflow/tfjs": "^4.15.0",
-    "@tensorflow/tfjs-react-native": "^0.8.0",
-    "@tensorflow/tfjs-platform-react-native": "^0.8.0",
-    "react-native-fs": "^2.20.0",
-    "react-native-view-shot": "^3.6.0",
     "expo-image-manipulator": "~11.0.0"
   },
   "devDependencies": {
