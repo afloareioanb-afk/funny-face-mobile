@@ -82,11 +82,7 @@ export default function CartoonCameraView({
         ratio="16:9"
         onCameraReady={() => setIsProcessing(true)}
       >
-        <CartoonFilter
-          cameraType={type}
-          isProcessing={isProcessing}
-          onProcessingChange={setIsProcessing}
-        />
+        {/* CartoonFilter temporarily disabled for build compatibility */}
         
         <View style={styles.controls}>
           <TouchableOpacity
