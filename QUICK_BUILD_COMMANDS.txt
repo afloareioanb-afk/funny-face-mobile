@@ -1,0 +1,27 @@
+========================================
+QUICK BUILD COMMANDS
+========================================
+
+Run these commands in PowerShell:
+
+1. Navigate to project:
+   cd C:\Users\ferwo\Desktop\web_application_SRE_MA\mobile-app
+
+2. Login to Expo:
+   eas login
+   
+   When prompted:
+   Username: croisant1987
+   Password: *bR8-(Dqv/?8GsS.
+
+3. Build APK:
+   npm run build:android
+
+4. Wait for build (10-20 minutes)
+
+5. Download APK from build URL
+
+6. Create GitHub Release:
+   https://github.com/afloareioanb-afk/funny-face-mobile/releases/new
+
+========================================
