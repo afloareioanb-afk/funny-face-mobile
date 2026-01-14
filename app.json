@@ -64,7 +64,8 @@
         {
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
         }
-      ]
+      ],
+      "expo-media-library"
     ],
     "extra": {
       "eas": {

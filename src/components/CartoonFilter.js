@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
-import { GLView } from 'expo-gl';
+// import { GLView } from 'expo-gl'; // Removed - using simpler approach
 import FaceDetector from '../utils/FaceDetector';
 
 const { width, height } = Dimensions.get('window');
